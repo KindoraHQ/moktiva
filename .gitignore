@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.private/
+.netlify/
+node_modules/
+__pycache__/
+*.log
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
