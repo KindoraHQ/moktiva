@@ -1,6 +1,6 @@
 # Mokita VPN
 
-Persian RTL static website for Mokita VPN and introductions to its Telegram services.
+Persian RTL static website for Mokita VPN and introductions to its music and group-management Telegram services.
 
 - Existing repository: `KindoraHQ/moktiva` (unchanged identity).
 - Hosting: https://moktiva.netlify.app/ on the existing Netlify project.
@@ -16,9 +16,9 @@ Run `python -m http.server 4187 --bind 127.0.0.1` from this directory and open `
 
 `index.html`: page content. `styles.css`: layout and locally hosted Vazirmatn. `app.js`: platform filters, guides, dialogs and menu. `assets/mark.svg`: original geometric Mokita monogram.
 
-Sales terms, plans, Telegram links and refund commitments are intentionally unpublished pending owner confirmation. Never insert guessed contact details, user VPN configurations, keys, UUIDs, subscription URLs or administrative endpoints. Telegram sections are descriptions only and do not connect to live services.
+Telegram purchase contact confirmed by the owner: https://t.me/nedarezae1370 (Neda). Payment methods: USDT, ETH, BTC, USDC by prior coordination; no wallet addresses, networks, on-site checkout or fixed prices are published. Plans and refund commitments remain pending confirmation. Ava is excluded from the public service offering. Never insert guessed contact details, user VPN configurations, keys, UUIDs, subscription URLs or administrative endpoints. Telegram sections are descriptions only and do not connect to live services.
 
-Before enabling sales: obtain confirmed plans, support handle, delivery workflow and reviewed policies. Update the public copy and verify all links. The hosting privacy explanation describes this website, not VPN traffic logging.
+Before enabling sales: obtain confirmed plans, delivery workflow and reviewed policies. Update the public copy and verify all links. The hosting privacy explanation describes this website, not VPN traffic logging.
 
 ## Deployment and rollback
 
