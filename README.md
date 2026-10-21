@@ -35,3 +35,7 @@ Vazirmatn: https://github.com/rastikerdar/vazirmatn — SIL Open Font License, b
 ## Usability and discovery update
 
 Payment method selector defaults to rial coordination; crypto panels show one network at a time, with local QR SVGs containing only the receiving address (no amount or automatic transfer). Canonical, social metadata, robots.txt, sitemap.xml and three standalone Persian device guides use only the netlify.app hostname. No Search Console account was connected and indexing/ranking is not guaranteed. Guides contain explicitly labeled original schematic illustrations rather than fabricated app screenshots. Unknown prices, hours and refund terms remain a pre-payment checklist, not promises.
+
+
+### Display preference
+The day/night switch follows system appearance on first visit. Explicit choices are stored locally under `mokita-theme`, shared by the homepage and guides, and never sent to a server. The standalone early `theme.js` avoids a theme flash and works within the existing CSP.
