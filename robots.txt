@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://moktiva.netlify.app/sitemap.xml

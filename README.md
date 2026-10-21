@@ -31,3 +31,7 @@ Rollback by republishing the previous successful Netlify deployment, or revert t
 Download links checked against original Hiddify / 2dust GitHub repositories and Apple App Store listings. Client guides are practical summaries; option names vary across versions. Do not claim every client feature was tested on a physical device.
 
 Vazirmatn: https://github.com/rastikerdar/vazirmatn — SIL Open Font License, bundled in `assets/OFL.txt`. Original site illustrations use SVG/CSS and include no reference-site assets.
+
+## Usability and discovery update
+
+Payment method selector defaults to rial coordination; crypto panels show one network at a time, with local QR SVGs containing only the receiving address (no amount or automatic transfer). Canonical, social metadata, robots.txt, sitemap.xml and three standalone Persian device guides use only the netlify.app hostname. No Search Console account was connected and indexing/ranking is not guaranteed. Guides contain explicitly labeled original schematic illustrations rather than fabricated app screenshots. Unknown prices, hours and refund terms remain a pre-payment checklist, not promises.

@@ -62,3 +62,17 @@ document.querySelectorAll('[data-copy-address]').forEach(button=>button.addEvent
  try{await navigator.clipboard.writeText(address);status.textContent='آدرس کپی شد؛ پیش از انتقال، شبکه و آدرس کامل را با اطلاعات سفارش تطبیق دهید.';}
  catch{status.textContent='کپی خودکار در این مرورگر در دسترس نیست؛ آدرس نمایش‌داده‌شده را انتخاب و کپی کنید.';}
 }));
+
+const paymentChoices=[...document.querySelectorAll('[data-payment]')];
+function choosePayment(method){
+ document.getElementById('payment-rial').hidden=method!=='rial';
+ document.getElementById('payment-crypto').hidden=method==='rial';
+ document.querySelectorAll('.wallet-card').forEach(card=>{card.hidden=!card.querySelector('#'+method+'-address');});
+ document.querySelector('.payment-guide').hidden=method!=='tron';
+ document.getElementById('copy-status').textContent='';
+ paymentChoices.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.payment===method)));
+}
+paymentChoices.forEach(button=>button.addEventListener('click',()=>choosePayment(button.dataset.payment)));
+const linkedNetwork=['ethereum','tron','bitcoin'].find(network=>location.hash==='#'+network+'-address');
+choosePayment(linkedNetwork||'rial');
+addEventListener('hashchange',()=>{const network=['ethereum','tron','bitcoin'].find(n=>location.hash==='#'+n+'-address');if(network)choosePayment(network);});
