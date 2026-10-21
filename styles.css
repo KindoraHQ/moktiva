@@ -121,3 +121,51 @@ body{background:#fbfcfa;color:var(--ink)}
 .hero-bottom{position:relative;z-index:1}
 .intro{background:linear-gradient(180deg,#f4faf6 0%,#edf7f2 100%)}
 @media(max-width:800px){.hero{padding-bottom:100px}.hero::after{height:110px}}
+
+/* Final art direction: midnight navy, champagne and restrained emerald. */
+:root{--lux-bg:#141b29;--lux-panel:#1d2737;--lux-ink:#f1efe8;--lux-muted:#b4bcc9;--lux-gold:#d4bd8c;--lux-line:#d4bd8c26}
+body{background:var(--lux-bg);color:var(--lux-ink)}
+.header{background:#111825;border-bottom:1px solid var(--lux-line)}
+.hero{background:radial-gradient(ellipse at 18% 40%,#466a7430,transparent 58%),radial-gradient(ellipse at 90% 15%,#b49b6320,transparent 50%),linear-gradient(180deg,#111825,#182231);padding-bottom:55px}
+.hero::after{height:80px;background:linear-gradient(180deg,#18223100,#182231);z-index:0}
+.hero h1 em{color:#d4bd8c}.hero-copy>p{color:#bbc2cd}.title-dot{color:#8fc6aa}.hero-bottom{border-top-color:var(--lux-line);color:#b0b9c7}
+.hero .eyebrow,.eyebrow.dark{color:#d4bd8c}.hero-art .connection-card{background:#202d3eea;border-color:#d4bd8c33}.hero-art .art-label{background:#202d3eea;border-color:#d4bd8c26}.connection-card strong{color:#ede9de}.art-caption{color:#9da9bc}
+.intro{background:linear-gradient(180deg,#182231,#182331)}
+.services-section{background:linear-gradient(180deg,#182331,#17212f)}
+.downloads{background:radial-gradient(ellipse at 90% 30%,#4768781c,transparent 65%),linear-gradient(180deg,#17212f,#1b2635);border-color:var(--lux-line)}
+.guide{background:linear-gradient(180deg,#1b2635,#182230)}
+.plans{background:linear-gradient(180deg,#182230,#16202e)}
+.telegram{background:linear-gradient(180deg,#16202e,#1b2534)}
+.technology{background:linear-gradient(180deg,#1b2534,#182230)}
+.faq{background:linear-gradient(180deg,#182230,#17212e)}
+.contact{background:radial-gradient(ellipse at 10% 20%,#c0a67418,transparent 60%),linear-gradient(135deg,#243443,#1c2b3c);border-top:1px solid var(--lux-line)}
+footer{background:#111825;border-top:1px solid var(--lux-line)}
+main h2,main h3,.downloads h2,.tech-list bdi{color:#f1efe8}
+main p,.section-head>p,.features p,.service-grid p,.app-card p,.tech-list p,.faq-list details p,.plans p,.telegram-grid p,.guide-document p{color:#b4bdca}
+.features,.features article{border-color:var(--lux-line)}
+.features article:nth-child(n) .feature-symbol,.service-grid article:nth-child(n) .feature-symbol{background:#d4bd8c12;color:#d4bd8c;border:1px solid #d4bd8c2e}
+.service-grid article:nth-child(n){background:linear-gradient(145deg,#212c3c,#1b2635);border:1px solid #d4bd8c29;border-top:2px solid #af996d;box-shadow:0 14px 30px #080d171f}
+.service-grid article:nth-child(n) .service-buy{background:linear-gradient(135deg,#e8d9b7,#c9b27f);color:#343020;border-color:#baa373;box-shadow:inset 0 1px 0 #ffffff70,0 3px 0 #77694780}
+.filters{background:#1019279c;border-color:#d4bd8c29;box-shadow:0 10px 25px #080d1726}
+.app-card:nth-child(n){background:linear-gradient(155deg,#253143,#1d2939);border-color:#d4bd8c24;box-shadow:0 12px 28px #080d1726}
+.app-top h3{color:#f2eee5}.app-top small{color:#b0b9c7}.app-actions{border-color:#d4bd8c24}.app-actions .text-link{color:#deca9f}
+.app-icon{background:#284b40;color:#b9e5cd}.app-icon.purple{background:#433954;color:#dfd1f4}.app-icon.blue{background:#2e435e;color:#c4ddfa}.fine-print{color:#a2adbc}
+.guide .eyebrow,.contact .eyebrow{color:#ddc89e}.steps li,.visual-guides{border-color:#d4bd8c26}.steps>li>span{color:#d4bd8c}.steps p,.guide .muted,.visual-guides p{color:#b6c0cd}
+.plans-panel,.rial-panel{background:linear-gradient(135deg,#233143,#1c2838);border-color:#d4bd8c33;box-shadow:0 14px 35px #080d171c}
+.plans-panel .eyebrow,.rial-panel .eyebrow{color:#d4bd8c}.plans-panel .pill{background:#d4bd8c18;color:#e1cea6;border:1px solid #d4bd8c29}.plans .small,.payment-panel .small{color:#b3bdcb}
+.order-checklist{background:#1c2838;border-color:#d4bd8c44}.order-checklist h3{color:#e9d8b5}.order-checklist span{color:#c0c7d2}.order-checklist span:before{color:#9dcdb5}
+.payment-choice h3{color:#eee9df}.payment-choice p{color:#b5bfcd}
+.payment-panel{background:linear-gradient(145deg,#202d3e,#1a2737);border-color:#d4bd8c2e}
+.payment-coins>span{background:#2a3748;border-color:#d4bd8c2e;color:#e3e7ec}.payment-note{background:#d4bd8c10;color:#d1c4a9;border:1px solid #d4bd8c25}
+.wallet-card{background:linear-gradient(150deg,#273648,#213042);border-color:#d4bd8c2e;border-inline-start-color:#b9a375;box-shadow:0 10px 26px #080d1726}.wallet-card .pill{background:#d4bd8c17;color:#e4d2ac;border:1px solid #d4bd8c30}.wallet-card p{color:#b8c1cf}.wallet-card code{background:#131f2e;border-color:#b7c3d02b;color:#f0e9d8}.qr-address img{border:7px solid white;border-radius:10px;background:white}.payment-guide{border-color:var(--lux-line)}.payment-guide summary{color:#ddcba6}.payment-guide li{color:#bcc5d1}#copy-status{color:#a9d9bf}
+.music-card{background:radial-gradient(ellipse at 10% 10%,#b59a631a,transparent 65%),linear-gradient(135deg,#263347,#1e2c3e);border:1px solid #d4bd8c2f}.music-card .pill{background:#d4bd8c17;color:#e4d2ac}.equalizer i{background:#c7b280}.equalizer i:nth-child(4n){background:#94bfa8}
+.management-card{background:linear-gradient(145deg,#273a3e,#203039);border-color:#b6c6b52b}.management-card .eyebrow{color:#d4bd8c}.management-graphic>div{background:#33484a;color:#c5ddc9;border:1px solid #b8ceb225}.management-graphic span{color:#d0ddd8}
+.tech-list>div{border-color:var(--lux-line)}.tech-list bdi{color:#ddc89e}.faq-list details{border-color:var(--lux-line)}.faq-list summary{color:#e0e5eb}.faq-list summary:after{color:#d4bd8c}.contact p{color:#b9c4d2}
+.text-link{color:#dbc799}.text-link.light,.hero .text-link{color:#e6dcc6}.text-link:hover{color:#f5e4bf}
+.button.primary,.button.mint{background:linear-gradient(135deg,#c6e8d7,#93c5ac);border-color:#86b99e;color:#1f4030;box-shadow:inset 0 1px 0 #ffffff85,0 4px 0 #4e7d6470,0 10px 20px #090f1b26}
+.button.nav-cta{background:linear-gradient(135deg,#d9c89f,#bdab7c);border-color:#b6a16f;color:#302d22;box-shadow:inset 0 1px 0 #fff8,0 3px 0 #77694780}
+.guide-document .eyebrow{color:#d4bd8c}.guide-document .guide-steps{background:linear-gradient(145deg,#233143,#1c2939);border-color:#d4bd8c33;box-shadow:0 10px 30px #070c1726}.guide-document li{color:#c6cdd7}.guide-document a:not(.button){color:#dcc89e}.guide-document figcaption{color:#a9b4c3}
+.footer-links{color:#bac2ce}.footer-top>p{color:#9ca9bc}.footer-bottom{border-color:var(--lux-line);color:#99a8bc}
+/* Dialogs intentionally retain a light reading surface and their original dark text. */
+dialog{color:#28263e;background:#fafbf9}dialog h2{color:#28263e}dialog p,dialog li{color:#66687c}
+@media(max-width:800px){.hero{padding-bottom:35px}.hero::after{height:55px}}
