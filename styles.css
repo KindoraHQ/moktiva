@@ -114,3 +114,10 @@ body{background:#fbfcfa;color:var(--ink)}
  .filters [data-platform=windows]:hover{box-shadow:inset 0 1px 0 #ffffff55,0 5px 0 #376d9b33,0 10px 19px #376d9b22}
 }
 @media(max-width:800px){.filters{width:100%;gap:6px;padding:6px}.filters button{font-size:12px;padding:12px 8px;min-height:47px}.app-actions>a{font-size:11px;padding:10px 13px}.services-section,.telegram{padding-top:55px}}
+
+/* Bridge the dark hero into the light mint content without a hard color seam. */
+.hero{position:relative;padding-bottom:140px}
+.hero::after{content:'';position:absolute;inset:auto 0 0;height:150px;pointer-events:none;background:linear-gradient(180deg,rgba(19,22,47,0) 0%,#242b43 18%,#536376 43%,#9db6b6 67%,#dceae5 87%,#f4faf6 100%)}
+.hero-bottom{position:relative;z-index:1}
+.intro{background:linear-gradient(180deg,#f4faf6 0%,#edf7f2 100%)}
+@media(max-width:800px){.hero{padding-bottom:100px}.hero::after{height:110px}}
