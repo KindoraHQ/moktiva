@@ -53,3 +53,64 @@
 .button:focus-visible,.wallet-copy:focus-visible,.payment-tabs button:focus-visible,.filters button:focus-visible,.visual-guides>a:focus-visible,.app-actions>a:focus-visible{outline:3px solid #8b6dc2;outline-offset:5px}
 @media(max-width:800px){.app-actions{gap:12px}.app-actions>a{padding:8px 10px}}
 @media(prefers-reduced-motion:reduce){.button,.wallet-copy,.payment-tabs button,.filters button,.visual-guides>a,.app-actions>a,.button>span,.text-link span{transition:none!important;transform:none!important}}
+
+/* Unified mint / violet / sky palette, with saturated device and download controls. */
+:root{--ink:#22263f;--mint-deep:#176344;--violet-deep:#5b3c8b;--sky-deep:#245f98}
+body{background:#fbfcfa;color:var(--ink)}
+.hero{background:radial-gradient(ellipse at 13% 54%,#53408742,transparent 48%),radial-gradient(ellipse at 89% 15%,#1c6b6130,transparent 44%),#13162f}
+.header{background:#15182f;border-bottom-color:#a6e8d522}
+.intro{background:linear-gradient(145deg,#fbfcfa,#edf7f2)}
+.features{border-top-color:#d3e5db}.features article{border-left-color:#d3e5db}
+.features article:nth-child(1) .feature-symbol{background:#d7f0e3;color:#206c4d}
+.features article:nth-child(2) .feature-symbol{background:#e6dcf7;color:#61458d}
+.features article:nth-child(3) .feature-symbol{background:#dcebfa;color:#306a9c}
+.services-section{padding-top:70px;background:linear-gradient(180deg,#edf7f2,#f8faf8)}
+.service-grid article{box-shadow:0 12px 30px #29284908;border-color:#e1e4e9}
+.service-grid article:nth-child(1){background:linear-gradient(155deg,#fff,#e9f6ed);border-top:3px solid #57ab80}
+.service-grid article:nth-child(2){background:linear-gradient(155deg,#fff,#f0eafa);border-top:3px solid #9a78cb}
+.service-grid article:nth-child(3){background:linear-gradient(155deg,#fff,#e9f2ff);border-top:3px solid #6e9ed1}
+.service-grid article:nth-child(1) .feature-symbol{background:#d8efdf;color:#377351}
+.service-grid article:nth-child(2) .feature-symbol{background:#e8ddf6;color:#715096}
+.service-grid article:nth-child(3) .feature-symbol{background:#dceafb;color:#386e9f}
+.downloads{background:radial-gradient(ellipse at 95% 0%,#d9e9fb99,transparent 55%),linear-gradient(140deg,#edf5fc,#f0edf9 70%,#ebf7f0);border-top:1px solid #e0e8f0;border-bottom:1px solid #e0e4ef}
+.downloads .eyebrow{color:#49659a}.downloads h2{color:#263452}
+.filters{width:fit-content;max-width:100%;padding:7px;border:1px solid #d3d9e8;background:#ffffffa3;box-shadow:0 8px 24px #48436c0a;border-radius:15px;gap:9px}
+.filters button{padding:13px 30px;border:1px solid transparent;border-radius:10px;font-weight:650;font-size:14px;min-height:49px;box-shadow:inset 0 1px 0 #ffffffb3,0 3px 0 #2834470d}
+.filters [data-platform=android]{background:linear-gradient(135deg,#e4f7e9,#cbeed9);border-color:#a8d8bc;color:#285f40}
+.filters [data-platform=ios]{background:linear-gradient(135deg,#f4ebff,#e6d4fa);border-color:#d1b7ed;color:#62418c}
+.filters [data-platform=windows]{background:linear-gradient(135deg,#e9f4ff,#cde5fc);border-color:#abcfee;color:#2b5d8c}
+.filters [data-platform=android].selected{background:linear-gradient(135deg,#278354,#176344);border-color:#176344;color:#fff;box-shadow:inset 0 1px 0 #ffffff35,0 4px 0 #104d36,0 8px 16px #23754e28}
+.filters [data-platform=ios].selected{background:linear-gradient(135deg,#8a5bc0,#633e94);border-color:#633e94;color:#fff;box-shadow:inset 0 1px 0 #ffffff35,0 4px 0 #482c70,0 8px 16px #68439a28}
+.filters [data-platform=windows].selected{background:linear-gradient(135deg,#3a8cc8,#28669e);border-color:#28669e;color:#fff;box-shadow:inset 0 1px 0 #ffffff35,0 4px 0 #1b4c79,0 8px 16px #2e70a128}
+.app-card{border:1px solid #d9e1ed;background:linear-gradient(160deg,#fff,#fbfcff);box-shadow:0 9px 26px #3a40530a}
+.app-card:nth-child(2){background:linear-gradient(160deg,#fff,#faf6ff)}.app-card:nth-child(3){background:linear-gradient(160deg,#fff,#f1f8ff)}
+.app-actions{border-top-color:#e5e6ee;padding-top:20px;gap:12px}
+.app-actions>a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 16px;background:linear-gradient(135deg,#288853,#17643d);border-color:#17643d;color:#fff;box-shadow:inset 0 1px 0 #ffffff33,0 3px 0 #104c2f,0 6px 12px #246e3d16;font-size:12px;font-weight:650}
+.app-actions .text-link{color:#6b4c95;font-weight:600}
+.guide{background:radial-gradient(ellipse at 95% 5%,#6e56933b,transparent 60%),linear-gradient(135deg,#252941,#24233e)}
+.visual-guides>a:nth-of-type(1){background:linear-gradient(135deg,#32765b,#245b47);border-color:#5b9e80}
+.visual-guides>a:nth-of-type(2){background:linear-gradient(135deg,#735493,#553d75);border-color:#9b80b7}
+.visual-guides>a:nth-of-type(3){background:linear-gradient(135deg,#3c6e9d,#2c5278);border-color:#6b93ba}
+.plans{background:linear-gradient(170deg,#fffdf8,#faf7f0 40%,#f6f5fb)}
+.plans-panel{background:linear-gradient(135deg,#fffefb,#f7f0e3);border-color:#e6dbc7;box-shadow:0 12px 30px #6d5b3206}
+.plans-panel .eyebrow{color:#8b6b36}.plans-panel .pill{background:#eee3ca;color:#76592c}
+.order-checklist{background:#fffdf9;border-color:#d9cbaa}.order-checklist h3{color:#5a4c36}
+.rial-panel{background:linear-gradient(140deg,#f7fff9,#e3f3e9);border-color:#bbd9c5}.rial-panel .eyebrow{color:#477b56}
+.payment-panel{background:linear-gradient(145deg,#f3effb,#eceff9);border-color:#d9d2e8}
+.wallet-card{background:linear-gradient(155deg,#fff,#fdfcff);border-color:#dfd7eb;box-shadow:0 8px 23px #58437409}
+.telegram{background:linear-gradient(180deg,#f6f5fb,#fbfcfa);padding-top:65px}
+.music-card{background:radial-gradient(ellipse at 8% 15%,#8764ab55,transparent 65%),linear-gradient(140deg,#363054,#24283f)}
+.management-card{background:linear-gradient(145deg,#edf8f0,#dfede4);border-color:#cadfcf}
+.technology{background:linear-gradient(125deg,#edf4fb,#f0eef8)}
+.tech-list>div{border-bottom-color:#d4dce8}.tech-list bdi{color:#5a4e83}
+.faq{background:linear-gradient(150deg,#fcfdfb,#f0f7f2)}.faq-list details{border-bottom-color:#d5e4db}.faq-list summary:after{color:#4e8067}
+.contact{background:radial-gradient(ellipse at 15% 40%,#9d76b04d,transparent 65%),linear-gradient(135deg,#61518a,#454b77)}
+.guide-document .guide-steps{background:linear-gradient(145deg,#fff,#f1f5fc);border-color:#d8e2ef;box-shadow:0 10px 30px #33466f06}
+.guide-document .button{background:linear-gradient(135deg,#e5f6ed,#cdebdc);color:#285d43;border-color:#b8d6c5}
+@media(hover:hover) and (pointer:fine){
+ .app-actions>a:hover{background:linear-gradient(135deg,#329b62,#207b4c);color:white;box-shadow:inset 0 1px 0 #ffffff55,0 5px 0 #104c2f,0 10px 20px #246e3d2b}
+ .filters [data-platform=android]:hover{box-shadow:inset 0 1px 0 #ffffff55,0 5px 0 #35765233,0 10px 19px #35765222}
+ .filters [data-platform=ios]:hover{box-shadow:inset 0 1px 0 #ffffff55,0 5px 0 #7952a133,0 10px 19px #7952a122}
+ .filters [data-platform=windows]:hover{box-shadow:inset 0 1px 0 #ffffff55,0 5px 0 #376d9b33,0 10px 19px #376d9b22}
+}
+@media(max-width:800px){.filters{width:100%;gap:6px;padding:6px}.filters button{font-size:12px;padding:12px 8px;min-height:47px}.app-actions>a{font-size:11px;padding:10px 13px}.services-section,.telegram{padding-top:55px}}
