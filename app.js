@@ -1,13 +1,14 @@
 'use strict';
 const apps = {
-  hiddify: {name:'Hiddify',icon:'H',color:'',url:'https://github.com/hiddify/hiddify-app/releases',description:'یک برنامه برای چند دستگاه؛ با امکان واردکردن لینک اشتراک و پروفایل اتصال.',platforms:['android','ios','windows']},
-  v2rayng: {name:'v2rayNG',icon:'V',color:'purple',url:'https://github.com/2dust/v2rayNG/releases',description:'برنامهٔ اتصال اندروید؛ برای واردکردن کانفیگ از لینک، کلیپ‌بورد یا کد QR.',platforms:['android']},
+  hiddify: {name:'Hiddify',icon:'H',color:'',url:'https://github.com/hiddify/hiddify-app/releases/latest/download/Hiddify-Android-universal.apk',description:'یک برنامه برای چند دستگاه؛ با امکان واردکردن لینک اشتراک و پروفایل اتصال.',platforms:['android','ios','windows']},
+  v2rayng: {name:'v2rayNG',icon:'V',color:'purple',url:'https://github.com/2dust/v2rayNG/releases/download/2.3.11/v2rayNG_2.3.11_universal.apk',description:'برنامهٔ اتصال اندروید؛ برای واردکردن کانفیگ از لینک، کلیپ‌بورد یا کد QR.',platforms:['android']},
   streisand: {name:'Streisand',icon:'S',color:'purple',url:'https://apps.apple.com/app/streisand/id6450534064',description:'برنامهٔ آیفون و آیپد؛ برای افزودن پروفایل شخصی و اتصال با تنظیمات سازگار.',platforms:['ios']},
   v2box: {name:'V2Box',icon:'V',color:'blue',url:'https://apps.apple.com/app/v2box-v2ray-client/id6446814690',description:'کلاینت آیفون با پشتیبانی از پروفایل‌های سازگار VLESS و REALITY.',platforms:['ios']},
-  v2rayn: {name:'v2rayN',icon:'N',color:'blue',url:'https://github.com/2dust/v2rayN/releases',description:'برنامهٔ دسکتاپ برای ویندوز؛ دریافت، انتخاب و مدیریت پروفایل‌های اتصال.',platforms:['windows']}
+  v2rayn: {name:'v2rayN',icon:'N',color:'blue',url:'https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-windows-64.zip',description:'نسخهٔ ۶۴بیتی ویندوز برای رایانه‌های Intel و AMD؛ فایل ZIP را کامل استخراج و برنامه را اجرا کنید.',platforms:['windows']}
 };
 const platformNames={android:'اندروید',ios:'آیفون و آیپد',windows:'ویندوز'};
 const hiddifyIOS='https://apps.apple.com/app/hiddify-proxy-vpn/id6596777532';
+const hiddifyWindows='https://github.com/hiddify/hiddify-app/releases/latest/download/Hiddify-Windows-Setup-x64.exe';
 let currentPlatform='android';
 const appGrid=document.getElementById('app-grid');
 function renderApps(platform){
@@ -17,7 +18,10 @@ function renderApps(platform){
   if(!app.platforms.includes(platform))continue;
   const article=document.createElement('article');article.className='app-card';
   article.innerHTML=`<div class="app-top"><span class="app-icon ${app.color}" aria-hidden="true">${app.icon}</span><div><h3 dir="ltr">${app.name}</h3><small>${platformNames[platform]} · منبع رسمی</small></div></div><p>${app.description}</p><div class="app-actions"><a target="_blank" rel="noopener noreferrer">دریافت برنامه ↗</a><button class="text-link" type="button">آموزش اتصال ←</button></div>`;
-  const link=article.querySelector('a');link.href=id==='hiddify'&&platform==='ios'?hiddifyIOS:app.url;link.setAttribute('aria-label',`دریافت ${app.name} برای ${platformNames[platform]}؛ در پنجرهٔ جدید`);
+  const link=article.querySelector('a');
+  link.href=id==='hiddify'?(platform==='ios'?hiddifyIOS:platform==='windows'?hiddifyWindows:app.url):app.url;
+  link.textContent=platform==='ios'?'دریافت از App Store ↗':platform==='android'?'دانلود مستقیم APK ↓':id==='v2rayn'?'دانلود ZIP ویندوز x64 ↓':'دانلود نصب ویندوز x64 ↓';
+  link.setAttribute('aria-label',platform==='ios'?`دریافت ${app.name} از App Store؛ در پنجرهٔ جدید`:`دانلود مستقیم ${app.name} برای ${platformNames[platform]}`);
   article.querySelector('button').addEventListener('click',()=>showGuide(id,platform));
   appGrid.append(article);
  }
@@ -33,10 +37,10 @@ function showGuide(id,platform){
  const app=apps[id];let steps=[];
  const common=['لینک اشتراک یا کانفیگ شخصی خود را از ارائه‌دهنده دریافت و کپی کنید. لینک اشتراک معمولاً با https و کانفیگ VLESS با vless شروع می‌شود.'];
  if(id==='hiddify')steps=['نسخهٔ مناسب '+platformNames[platform]+' را از لینک رسمی کارت برنامه نصب و باز کنید.',...common,'در برنامه روی افزودن پروفایل (+) بزنید و گزینهٔ ورود از کلیپ‌بورد را انتخاب کنید. برای QR از گزینهٔ اسکن، در صورت وجود، استفاده کنید.','اگر لینک اشتراک دارید، پروفایل را به‌روزرسانی کنید؛ سپس پروفایل دریافت‌شده و دکمهٔ اتصال را انتخاب کنید.',platform==='windows'?'اگر اتصال برقرار است ولی مرورگر تغییر مسیر نمی‌دهد، حالت پراکسی سیستم را در برنامه بررسی کنید. حالت TUN بسته به تنظیمات ممکن است دسترسی مدیر بخواهد.':'درخواست سیستم‌عامل برای ایجاد VPN را تأیید کنید. پس از اتصال، بازشدن یک صفحه را امتحان کنید.'];
- if(id==='v2rayng')steps=['v2rayNG را از صفحهٔ Releases سازنده دریافت کنید. در Assets، نسخهٔ متناسب با معماری گوشی یا universal را انتخاب کنید.',...common,'برای یک کانفیگ، دکمهٔ + و گزینهٔ Import config from Clipboard را انتخاب کنید؛ برای QR، گزینهٔ اسکن را بزنید.','برای لینک اشتراک، وارد Subscription group setting شوید، با + لینک را اضافه و ذخیره کنید؛ سپس Update subscription را اجرا کنید.','یک پروفایل را انتخاب کنید، دکمهٔ اتصال پایین صفحه را بزنید و درخواست VPN اندروید را تأیید کنید.'];
+ if(id==='v2rayng')steps=['روی «دانلود مستقیم APK» در کارت v2rayNG بزنید؛ فایل نسخهٔ عمومی اندروید مستقیم دریافت می‌شود. پس از دانلود، فایل APK را باز و برنامه را نصب کنید.',...common,'برای یک کانفیگ، دکمهٔ + و گزینهٔ Import config from Clipboard را انتخاب کنید؛ برای QR، گزینهٔ اسکن را بزنید.','برای لینک اشتراک، وارد Subscription group setting شوید، با + لینک را اضافه و ذخیره کنید؛ سپس Update subscription را اجرا کنید.','یک پروفایل را انتخاب کنید، دکمهٔ اتصال پایین صفحه را بزنید و درخواست VPN اندروید را تأیید کنید.'];
  if(id==='streisand')steps=['Streisand را از App Store نصب و باز کنید.',...common,'با دکمهٔ +، گزینهٔ ورود از کلیپ‌بورد (Import from clipboard) را انتخاب کنید. اگر کد QR دارید، از گزینهٔ اسکن استفاده کنید.','اگر پروفایل به‌صورت اشتراک اضافه شده است، آن را به‌روزرسانی و یکی از سرورها را انتخاب کنید.','دکمهٔ اتصال را بزنید. اجازهٔ افزودن تنظیمات VPN را در آیفون تأیید کنید و در صورت درخواست، رمز خود گوشی را وارد کنید.'];
  if(id==='v2box')steps=['V2Box - V2ray Client را از لینک App Store همین کارت نصب کنید.',...common,'به بخش Configs بروید؛ روی + بزنید و Import V2Ray URI from Clipboard را برای کانفیگ انتخاب کنید. برای اشتراک، گزینهٔ افزودن Subscription را انتخاب و لینک را ذخیره کنید.','برای QR از گزینهٔ اسکن در بخش افزودن استفاده کنید. در اشتراک، فهرست را به‌روزرسانی و یک پروفایل را انتخاب کنید.','به صفحهٔ اتصال برگردید و کنترل اتصال را فعال کنید. اجازهٔ افزودن VPN به آیفون را تأیید کنید.'];
- if(id==='v2rayn')steps=['از Releases رسمی، نسخهٔ سازگار با ویندوز و معماری رایانه (x64 یا ARM64) را انتخاب کنید. پیش‌نیازهای همان نسخه را در توضیحات سازنده بخوانید و بسته را کامل استخراج کنید.',...common,'برای کانفیگ، در پنجرهٔ برنامه از ورود از کلیپ‌بورد (معمولاً Ctrl+V) استفاده کنید. برای اشتراک، از Subscription group settings گروهی با لینک خود بسازید و آن را به‌روزرسانی کنید.','در صورت داشتن QR، گزینهٔ اسکن کد روی صفحه را از منوی افزودن/سرورها، در نسخه‌هایی که پشتیبانی می‌کنند، انتخاب کنید.','یک سرور را فعال کنید و System proxy را روی حالت تنظیم پراکسی سیستم قرار دهید. برای مسیریابی دیگر برنامه‌ها، حالت TUN بسته به نسخه ممکن است دسترسی مدیر بخواهد.'];
+ if(id==='v2rayn')steps=['روی «دانلود ZIP ویندوز x64» در کارت v2rayN بزنید. این فایل برای رایانه‌های ۶۴بیتی Intel و AMD است؛ پس از دانلود با Extract All بسته را کامل استخراج و v2rayN.exe را اجرا کنید.',...common,'برای کانفیگ، در پنجرهٔ برنامه از ورود از کلیپ‌بورد (معمولاً Ctrl+V) استفاده کنید. برای اشتراک، از Subscription group settings گروهی با لینک خود بسازید و آن را به‌روزرسانی کنید.','در صورت داشتن QR، گزینهٔ اسکن کد روی صفحه را از منوی افزودن/سرورها، در نسخه‌هایی که پشتیبانی می‌کنند، انتخاب کنید.','یک سرور را فعال کنید و System proxy را روی حالت تنظیم پراکسی سیستم قرار دهید. برای مسیریابی دیگر برنامه‌ها، حالت TUN بسته به نسخه ممکن است دسترسی مدیر بخواهد.'];
  showDialog(`آموزش ${app.name} برای ${platformNames[platform]}`,list(steps)+'<p class="note">نام و جای گزینه‌ها ممکن است در نسخه‌های مختلف کمی فرق کند. تنظیمات SNI، REALITY، کلیدها و امنیت TLS را خودسرانه تغییر ندهید. نصب برنامه به‌تنهایی اشتراک VPN ایجاد نمی‌کند.</p>');
 }
 const information={

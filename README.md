@@ -39,3 +39,5 @@ Payment method selector defaults to rial coordination; crypto panels show one ne
 
 ### Display preference
 The day/night switch follows system appearance on first visit. Explicit choices are stored locally under `mokita-theme`, shared by the homepage and guides, and never sent to a server. The standalone early `theme.js` avoids a theme flash and works within the existing CSP.
+
+Download cards link directly to official release assets for Hiddify Android universal APK / Windows x64 Setup and v2rayN Windows x64 ZIP. These use stable latest/download asset names. v2rayNG Android universal APK is pinned to 2.3.11 because the filename includes its version; update that URL when choosing a new verified release. iOS cards link directly to their App Store app pages. No installer binaries are hosted or committed to this repository.
