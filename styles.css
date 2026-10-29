@@ -198,3 +198,6 @@ html[data-theme="light"] .pricing-table-wrap{background:#fffdf8;border-color:#b9
 
 /* User-supplied Mokita identity, shared with Telegram artwork. */
 .hero-art.mokita-logo-art{display:grid;place-items:center}.mokita-hero-logo{display:block;width:min(100%,500px);height:auto;max-height:100%;object-fit:contain;border-radius:50%;filter:drop-shadow(0 12px 30px #00b7ff20)}.hero-copy .speed-test-action{margin:18px 0 0}.speed-test-action .text-link{color:#a7f0d1}html[data-theme="light"] .speed-test-action .text-link{color:#235e56}
+
+/* Mokita help bot and trial entry points */
+.contact-links{display:flex;flex-direction:column;gap:12px;min-width:255px;flex-shrink:0}.contact-links .button{justify-content:center;text-align:center}.contact-links .channel-link{text-align:center;color:#e8e2ff;font-size:13px;padding:6px}.contact .trial-terms{max-width:620px;margin-top:16px;line-height:2}@media(max-width:600px){.contact-links{width:100%;min-width:0}}
