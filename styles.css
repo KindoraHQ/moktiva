@@ -201,3 +201,15 @@ html[data-theme="light"] .pricing-table-wrap{background:#fffdf8;border-color:#b9
 
 /* Mokita help bot and trial entry points */
 .contact-links{display:flex;flex-direction:column;gap:12px;min-width:255px;flex-shrink:0}.contact-links .button{justify-content:center;text-align:center}.contact-links .channel-link{text-align:center;color:#e8e2ff;font-size:13px;padding:6px}.contact .trial-terms{max-width:620px;margin-top:16px;line-height:2}@media(max-width:600px){.contact-links{width:100%;min-width:0}}
+
+/* Compact homepage section spacing; preserve all content and controls. */
+main > .section{padding-block:60px}
+main > #guide{padding-bottom:32px}
+main > #plans{padding-top:32px;padding-bottom:42px}
+#guide .visual-guides{margin-top:28px;padding-top:20px}
+@media(max-width:800px){
+ main > .section{padding-block:40px}
+ main > #guide{padding-bottom:24px}
+ main > #plans{padding-top:24px;padding-bottom:32px}
+ #guide .visual-guides{margin-top:22px;padding-top:16px}
+}
