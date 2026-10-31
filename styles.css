@@ -213,3 +213,5 @@ main > #plans{padding-top:32px;padding-bottom:42px}
  main > #plans{padding-top:24px;padding-bottom:32px}
  #guide .visual-guides{margin-top:22px;padding-top:16px}
 }
+
+.visit-counter{font-size:11px;text-align:center;color:var(--muted,#77818e);margin:8px 0 0;line-height:1.6;font-weight:400}

@@ -1,0 +1,8 @@
+name = "moktiva"
+pages_build_output_dir = "."
+compatibility_date = "2026-10-31"
+
+[[d1_databases]]
+binding = "VISITS_DB"
+database_name = "mokita-daily-visits"
+database_id = "db7df28a-4440-4dbe-90df-773865d08d47"
