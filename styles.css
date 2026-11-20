@@ -87,6 +87,10 @@ body{background:#fbfcfa;color:var(--ink)}
 .app-actions{border-top-color:#e5e6ee;padding-top:20px;gap:12px}
 .app-actions>a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:10px 16px;background:linear-gradient(135deg,#288853,#17643d);border-color:#17643d;color:#fff;box-shadow:inset 0 1px 0 #ffffff33,0 3px 0 #104c2f,0 6px 12px #246e3d16;font-size:12px;font-weight:650}
 .app-actions .text-link{color:#6b4c95;font-weight:600}
+.app-icon.app-icon-image{object-fit:contain;background:transparent}
+.app-actions:has(.app-guide-link){flex-wrap:wrap}
+.app-actions .app-guide-link{background:transparent;color:inherit;border-color:currentColor;box-shadow:none}
+.apk-checksum{display:inline-block;max-width:100%;overflow-wrap:anywhere;direction:ltr}
 .guide{background:radial-gradient(ellipse at 95% 5%,#6e56933b,transparent 60%),linear-gradient(135deg,#252941,#24233e)}
 .visual-guides>a:nth-of-type(1){background:linear-gradient(135deg,#32765b,#245b47);border-color:#5b9e80}
 .visual-guides>a:nth-of-type(2){background:linear-gradient(135deg,#735493,#553d75);border-color:#9b80b7}

@@ -2,6 +2,7 @@
 const apps = {
   hiddify: {name:'Hiddify',icon:'H',color:'',url:'https://github.com/hiddify/hiddify-app/releases/latest/download/Hiddify-Android-universal.apk',description:'یک برنامه برای چند دستگاه؛ با امکان واردکردن لینک مستقیم و پروفایل اتصال.',platforms:['android','ios','windows']},
   v2rayng: {name:'v2rayNG',icon:'V',color:'purple',url:'https://github.com/2dust/v2rayNG/releases/download/2.3.11/v2rayNG_2.3.11_universal.apk',description:'برنامهٔ اتصال اندروید؛ برای واردکردن کانفیگ از لینک، کلیپ‌بورد یا کد QR.',platforms:['android']},
+  v2raytun: {name:'v2rayTUN',icon:'',color:'',logo:'assets/v2raytun.png',version:'5.27.84',guide:'guides/v2raytun.html',url:'https://github.com/LXST-CODE/v2RayTun/releases/download/android-v5.27.84/v2RayTun-android-universal-v5.27.84.apk',description:'گزینهٔ دیگری برای اندروید با امکان افزودن لینک اشتراک یا کانفیگ از کلیپ‌بورد.',platforms:['android']},
   streisand: {name:'Streisand',icon:'S',color:'purple',url:'https://apps.apple.com/app/streisand/id6450534064',description:'برنامهٔ آیفون و آیپد؛ برای افزودن پروفایل شخصی و اتصال با تنظیمات سازگار.',platforms:['ios']},
   v2box: {name:'V2Box',icon:'V',color:'blue',url:'https://apps.apple.com/app/v2box-v2ray-client/id6446814690',description:'کلاینت آیفون با پشتیبانی از پروفایل‌های سازگار VLESS و REALITY.',platforms:['ios']},
   v2rayn: {name:'v2rayN',icon:'N',color:'blue',url:'https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-windows-64.zip',description:'نسخهٔ ۶۴بیتی ویندوز برای رایانه‌های Intel و AMD؛ فایل ZIP را کامل استخراج و برنامه را اجرا کنید.',platforms:['windows']}
@@ -22,7 +23,26 @@ function renderApps(platform){
   link.href=id==='hiddify'?(platform==='ios'?hiddifyIOS:platform==='windows'?hiddifyWindows:app.url):app.url;
   link.textContent=platform==='ios'?'دریافت از App Store ↗':platform==='android'?'دانلود مستقیم APK ↓':id==='v2rayn'?'دانلود ZIP ویندوز x64 ↓':'دانلود نصب ویندوز x64 ↓';
   link.setAttribute('aria-label',platform==='ios'?`دریافت ${app.name} از App Store؛ در پنجرهٔ جدید`:`دانلود مستقیم ${app.name} برای ${platformNames[platform]}`);
-  article.querySelector('button').addEventListener('click',()=>showGuide(id,platform));
+  const guideButton=article.querySelector('button');
+  if(app.guide){
+    const guide=document.createElement('a');
+    guide.href=app.guide;
+    guide.className='app-guide-link';
+    guide.textContent='راهنمای نصب و استفاده ←';
+    guideButton.replaceWith(guide);
+    const logo=document.createElement('img');
+    logo.src=app.logo;
+    logo.alt='';
+    logo.className='app-icon app-icon-image';
+    logo.width=48;
+    logo.height=48;
+    article.querySelector('.app-icon').replaceWith(logo);
+    const version=document.createElement('bdi');
+    version.textContent=app.version;
+    article.querySelector('small').append(' · نسخهٔ ',version);
+  } else {
+    guideButton.addEventListener('click',()=>showGuide(id,platform));
+  }
   appGrid.append(article);
  }
  document.querySelectorAll('[data-platform]').forEach(button=>{const selected=button.dataset.platform===platform;button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected));});
